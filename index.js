@@ -1,5 +1,6 @@
 const program = require('commander');
 const log = console.log;
+const createPassword = require('./utils/CreatePassword');
 
 program
     .version('1.0.0')
@@ -30,7 +31,5 @@ const {
     symbols
 } = program.opts();
 
-log(length);
-log(save);
-log(numbers);
-log(symbols);
+const password = createPassword(length, numbers, symbols);
+log(password);
